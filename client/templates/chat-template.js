@@ -1,6 +1,6 @@
 Template.appChat.helpers({
 	messages: function () {
-		return Messages.find({}, {sort: {createdAt: -1}, limit: 10})
+		return Messages.find({}, {sort: {createdAt:-1}, limit: 10})
 	}
 });
 
@@ -9,17 +9,21 @@ Template.appChat.events({
 		Messages.remove(this._id);
 		return false;
 	},
-	"keyup .txtText": function (event) {
+	"keyup .txtGender": function (event) {
 
 		if(event.keyCode == 13){
 			Messages.insert({
+				sid: $(".txtSID").val(),
 				name: $(".txtName").val(),
-				text: $(".txtText").val(),
+				age: $(".txtAge").val(),
+				birthdate: $(".txtBirthdate").val(),
+				address: $(".txtAddress").val(),
+				gender: $(".txtGender").val(),
 				createdAt: new Date()
 			});
 
-			$(".txtText").val("");
-			$(".txtText").focus();
+			$(".txtGender").val("");
+			$(".txtGender").focus();
 		}
 		return false;
 	}

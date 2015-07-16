@@ -1,11 +1,30 @@
-<template name="appChat">
-	{{#each messages}}
-		<div class="alert alert-info">
-			<b>{{name}}</b> : {{text}} <button class="btn btn-danger btn-small btnDelete">&times;</button>
-		</div>
-	{{/each}}
-	<form class="form">
-		<input type="text" class="form-control txtName" placeholder="Username"/>
-		<input type="text" class="form-control txtText" placeholder="Type a Messages"/>
-	</form>
+<template name="appChat" style="background-color:black;">
+<div class = "container" >
+
+	<div style="float:right;margin-right:50px;">
+		{{#each messages}}
+			<div class="alert alert-info" style="width:700px;margin-top:-10px;">
+				<b>STUDENT ID :</b>{{sid}}<br>
+				<b>NAME :</b> {{name}}<br>
+				<b>AGE : </b> {{age}}<br>
+				<b>BIRTHDATE :</b> {{birthdate}} <br>
+				<b>ADDRESS :</b> {{address}}<br>
+				<b>GENDER :</b> {{gender}}
+				<br> <button class="btn btn-danger btn-small btnDelete"> DELETE </button>
+			</div>
+		{{/each}}
+	</div>	
+
+	<div style="margin-left:50px;">
+		<form class="form">
+			<input type="text" class="form-control txtSID" placeholder="Student ID"/><br>
+			<input type="text" class="form-control txtName" placeholder="Name"/><br>
+			<input type="text" class="form-control txtAge" placeholder="Age"/><br>
+			<input type="text" class="form-control txtBirthdate" placeholder="Birth Date"/><br>
+			<input type="text" class="form-control txtAddress" placeholder="Address"/><br>
+			<input type="text" class="form-control txtGender" placeholder="Gender"/>
+		</form>
+	</div>
+
+</div>
 </template>
